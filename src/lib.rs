@@ -103,3 +103,17 @@ pub trait Sub<Rhs = Self> {
 pub trait SubAssign<Rhs = Self> {
     fn sub_assign(&mut self, rhs: Rhs);
 }
+
+#[const_trait]
+pub trait PartialEq<Rhs = Self> {
+    /// This method tests for `self` and `other` values to be equal, and is used
+    /// by `==`.
+    fn eq(&self, other: &Rhs) -> bool;
+
+    /// This method tests for `!=`. The default implementation is almost always
+    /// sufficient, and should not be overridden without very good reason.
+    #[inline]
+    fn ne(&self, other: &Rhs) -> bool {
+        !self.eq(other)
+    }
+}

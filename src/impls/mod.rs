@@ -12,6 +12,7 @@ mod mul;
 mod mul_assign;
 mod neg;
 mod not;
+mod partial_eq;
 mod rem;
 mod rem_assign;
 mod shl;
