@@ -1,7 +1,6 @@
-#![feature(const_trait_impl, const_mut_refs, const_fn_floating_point_arithmetic)]
+#![feature(const_trait_impl, const_mut_refs, const_fn_floating_point_arithmetic, effects)]
 
 mod impls;
-pub use impls::*;
 
 #[const_trait]
 pub trait Add<Rhs = Self> {
